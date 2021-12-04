@@ -1,0 +1,274 @@
+//inheritance
+class Person{
+    String name;
+    String fatherName;
+    
+}
+class Student extends Person{
+    String address;
+    void print(){
+        System.out.println("name :"+ name);
+        System.out.println("father's name :"+ fatherName);
+        System.out.println("address :" + address);
+        
+    }
+    
+}
+class HelloWorld {
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.name = "Harish";
+        student.fatherName = "Ramesh";
+        student.address = "Bangalore";
+        student.print();
+    }
+}
+//polymorphism
+//polymorphism
+//runtime
+class A{
+    void print(){
+        System.out.println("this is class A");
+    }
+}
+class B extends A{
+    void print(){
+        System.out.println("this is class B");
+    }
+}
+class HelloWorld {
+    public static void main(String[] args) {
+       A obj = new B();
+       obj.print();
+    }
+}
+
+
+
+//compile time
+class A{
+    double area(double side){
+        return side*side;
+    }
+    double area(double base,double height){
+        return 0.5*base*height;
+    }
+}
+
+class HelloWorld {
+    public static void main(String[] args) {
+        //for square
+        A obj = new A();
+        System.out.println(obj.area(4));
+        //for triangle
+        System.out.println(obj.area(5,4));
+     
+    }
+}
+//abstraction
+abstract class A{
+    abstract void print();
+}
+class B extends A{
+    void print(){
+        System.out.println("this is the implementation");
+    }
+}
+
+
+class HelloWorld {
+    public static void main(String[] args) {
+        A obj = new B();
+        obj.print();
+      
+     
+    }
+}
+
+
+
+
+//list interface in java
+
+import java.util.*;
+
+class HelloWorld {
+    public static void main(String[] args) {
+       List<Integer> list = new ArrayList<Integer>();
+       list.add(4);
+       list.add(3);
+       list.add(5);
+       list.add(1);
+       for(int x: list)System.out.print(x+ " ");
+       System.out.println();
+       list.add(2,66);
+       for(int x: list)System.out.print(x+ " ");
+       System.out.println();
+       list.remove(3);
+       for(int x: list)System.out.print(x+ " ");
+       System.out.println();
+       list.set(1,44);
+       for(int x: list)System.out.print(x+ " ");
+       System.out.println();
+       Collections.sort(list);
+        for(int x: list)System.out.print(x+ " ");
+       System.out.println();
+      
+     
+    }
+}
+
+//collection framework
+
+
+//linked list in java
+
+import java.util.*;
+
+class HelloWorld {
+    public static void main(String[] args) {
+     List<String> list = new LinkedList<>();
+     list.add("rajasthan");
+     list.add("punjab");
+     list.add(1,"karnataka");
+     Iterator itr = list.iterator();
+     while(itr.hasNext()){
+         System.out.print(itr.next()+" ");
+     }
+     System.out.println();
+     list.remove(2);
+     for(String item : list)System.out.print(item+" ");
+     System.out.println();
+     System.out.println(list.indexOf("rajasthan"));
+      
+     
+    }
+}
+
+//stack 
+
+import java.util.*;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<Integer>();
+        stack.push(4);
+        stack.push(5);
+        stack.push(3);
+        stack.push(88);
+        stack.push(44);
+        
+        Iterator it = stack.iterator();
+        while(it.hasNext()){
+            System.out.print(it.next()+" ");
+        }
+        System.out.println();
+        
+        stack.pop();
+        it = stack.iterator();
+        while(it.hasNext()){
+            System.out.print(it.next()+" ");
+        }
+        System.out.println();
+        System.out.println(stack.peek());
+        
+        Stack<Integer> stackNew = new Stack<>();
+        stackNew.addAll(stack);
+        
+         it = stackNew.iterator();
+        while(it.hasNext()){
+            System.out.print(it.next()+" ");
+        }
+        System.out.println();
+     
+    }
+}
+
+//queue
+
+import java.util.*;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        Queue<Integer> queue = new LinkedList<>();
+        for(int i=1;i<10;i++){
+            queue.add(i);
+        }
+        Iterator it = queue.iterator();
+        while(it.hasNext()){	
+            System.out.print(it.next()+" ");
+        }
+        System.out.println();
+        queue.poll();
+         it = queue.iterator();
+        while(it.hasNext()){
+            System.out.print(it.next()+" ");
+        }
+        System.out.println();
+        queue.remove();
+         it = queue.iterator();
+        while(it.hasNext()){
+            System.out.print(it.next()+" ");
+        }
+        System.out.println();
+        
+        
+       
+    }
+}
+
+//set interface-->hashset, linkedhashset, treeset
+//set
+
+import java.util.*;
+
+class HelloWorld {
+    public static void main(String[] args) {
+     Set<Integer> set1 = new HashSet<>();
+     Set<Integer> set2 = new LinkedHashSet<>();
+     Set<Integer> set3 = new TreeSet<>();
+     
+     int[] arr = {2,6,4,5,8,1,3,5,2,0};
+     for(int element:arr){
+         set1.add(element);
+         set2.add(element);
+         set3.add(element);
+     }
+     Iterator i1 = set1.iterator();
+     Iterator i2 = set2.iterator();
+     Iterator i3 = set3.iterator();
+     
+     while(i1.hasNext()){
+         System.out.println(i1.next() + " "+ i2.next()+" "+i3.next());
+     }
+        
+       
+    }
+}
+
+
+//hashmap
+
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+         HashMap<Integer,String> map = new HashMap<>();
+        map.put(1,"raj");
+        map.put(2,"rohan");
+        map.put(3,"ramesh");
+        
+        for(Map.Entry<Integer,String> entry : map.entrySet()){
+            System.out.println("key : "+ entry.getKey() +"   Value : "+entry.getValue());
+        }
+        System.out.println(map.containsKey(1));
+        System.out.println(map.containsKey(5));
+        System.out.println(map.containsValue("raj"));
+    }
+}
+
+
+
+
+
+
+
