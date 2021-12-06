@@ -32,3 +32,6 @@ TestProgram.java
  TestProgram
 DsaUdacity/Recursion.java
  DsaUdacity.Recursion
+DsaUdacity/QuickSortProgram.java
+ DsaUdacity.QuickSort
+ DsaUdacity.QuickSortProgram
